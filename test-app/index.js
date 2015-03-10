@@ -12,7 +12,7 @@ var client = redis.createClient(
 app.get('/', function(req, res, next) {
   client.incr('visits', function(err, visits) {
     if(err) return next(err);
-    res.send('This is a simple counter test. You have viewed this page ' + visits + ' times!');
+    res.send('This is a simple counter test. You have viewed this page ' + visits + ' times! You are authenticated as ' + req.get('username', 'anonymous'));
   });
 });
 

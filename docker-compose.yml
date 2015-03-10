@@ -1,9 +1,17 @@
-web:
+front:
+  build: ./front-controller
+  volumes:
+    - "front-controller:/src/app"
+  ports:
+    - "80:3000"
+  links:
+   - api
+api:
   build: ./test-app
   volumes:
     - "test-app:/src/app"
   ports:
-    - "80:3000"
+    - "3000:3000"
   links:
    - redis
 redis:
