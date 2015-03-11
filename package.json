@@ -1,0 +1,9 @@
+{
+  "name": "docker-node-test",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "node-front-controller": "git://github.com/anton-107/node-front-controller.git",
+    "node-sample-redis-api": "git://github.com/anton-107/node-sample-redis-api.git"
+  }
+}

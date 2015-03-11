@@ -1,5 +1,5 @@
 front:
-  build: ./front-controller
+  build: ./node_modules/node-front-controller
   volumes:
     - "front-controller:/src/app"
   ports:
@@ -7,7 +7,7 @@ front:
   links:
    - api
 api:
-  build: ./test-app
+  build: ./node_modules/node-sample-redis-api
   volumes:
     - "test-app:/src/app"
   ports:
