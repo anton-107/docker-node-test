@@ -6,7 +6,7 @@ front:
   links:
    - "api:api"
 api:
-  build: anton107/node-sample-redis-api
+  image: anton107/node-sample-redis-api
   autorestart: always
   ports:
     - "3000:3000"
