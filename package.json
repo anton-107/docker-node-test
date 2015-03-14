@@ -4,6 +4,7 @@
   "description": "",
   "dependencies": {
     "node-front-controller": "git://github.com/anton-107/node-front-controller.git",
+    "node-sample-mongodb-api": "git://github.com/anton-107/node-sample-mongodb-api.git",
     "node-sample-redis-api": "git://github.com/anton-107/node-sample-redis-api.git"
   }
 }

@@ -5,13 +5,26 @@ front:
   ports:
     - "80:3000"
   links:
-   - api
-api:
+   - mongoapi
+   - redisapi
+mongoapi:
+  build: ./node_modules/node-sample-mongodb-api
+  ports:
+    - "3001:3000"
+  links:
+    - mongodb
+mongodb:
+    build: ./mongodb
+    environment:
+      - AUTH=no
+    ports:
+      - "27017:27017"
+redisapi:
   build: ./node_modules/node-sample-redis-api
   volumes:
     - "test-app:/src/app"
   ports:
-    - "3000:3000"
+    - "3002:3000"
   links:
    - redis
 redis:

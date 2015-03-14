@@ -4,14 +4,27 @@ front:
   ports:
     - "80:3000"
   links:
-   - "api:api"
-api:
+   - "mongoapi:mongoapi"
+   - "redisapi:redisapi"
+mongoapi:
+  image: anton107/node-sample-mongodb-api
+  ports:
+    - "3001:3000"
+  links:
+    - "mongodb:mongodb"
+redisapi:
   image: anton107/node-sample-redis-api
   autorestart: always
   ports:
-    - "3000:3000"
+    - "3002:3000"
   links:
     - "redis:redis"
+mongodb:
+    image: anton107/tutum-docker-mongodb
+    environment:
+      - AUTH=no
+    ports:
+      - "27017:27017"
 redis:
     image: redis
     autorestart: always
